@@ -1,0 +1,28 @@
+
+
+CREATE TABLE `employeeattribute` (
+  `attribute_id` int NOT NULL,
+  `employee_id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  KEY `employee_id_idx` (`employee_id`),
+  KEY `attribute_id_idx` (`attribute_id`),
+  CONSTRAINT `attribute_id` FOREIGN KEY (`attribute_id`) REFERENCES `attribute` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`) ON DELETE CASCADE
+  ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `attribute` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `value` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+  
+ CREATE TABLE `employee` (
+ `id` int NOT NULL AUTO_INCREMENT,
+ `name` varchar(45) NOT NULL,
+ `birth_date` datetime NOT NULL,
+ `car` tinyint NOT NULL,
+ `home_address` varchar(45) NOT NULL,
+ PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci'
+

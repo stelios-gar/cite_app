@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: slrst
+Build-Jdk: 15.0.1
+Implementation-Title: crud
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.project.springboot
+Implementation-URL: https://spring.io/projects/spring-boot/crud
+Created-By: Maven Integration for Eclipse
+

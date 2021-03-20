@@ -1,0 +1,34 @@
+
+
+<div class="container">
+    <div class="row"><h1>This is Map Component</h1></div>
+    <div class="row">
+        <div class="col">
+           <button routerLink="/menu" type="button" class="btn btn-primary">Get back to menu</button>
+        </div>
+    </div>
+    <div class="row">   
+        <div class="offset-4 col-4">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">Go!</button>
+              </span>
+            </div><!-- /input-group -->
+        </div>
+    </div>
+    <div class="row"> 
+      <div class="container">   
+        <ul class="list-group">
+            <li *ngFor="let attribute of totalAttributes" class="list-group-item" (click) = 'viewEmpByAttrId(attribute.id)'>{{attribute.value}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="container">   
+        <ul class="list-group">
+            <li *ngFor="let employee of empObjs" class="list-group-item">{{employee.name}}</li>
+        </ul>
+      </div>
+    </div>
+</div>

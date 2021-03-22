@@ -20,7 +20,7 @@ public class EmployeeAttributeDAOHibernate implements EmployeeAttributeDAO {
 	}
 
 	@Override
-	public List<Integer> findById(int employeeId) {
+	public List<Integer> getAttrByEmpId(int employeeId) {
 
 		Session currentSession = entityManager.unwrap(Session.class);
 		
@@ -66,6 +66,20 @@ public class EmployeeAttributeDAOHibernate implements EmployeeAttributeDAO {
 		theQuery.setParameter("employeeId", employeeId);
 		theQuery.executeUpdate();
 
+	}
+
+	@Override
+	public List<Integer> getEmpByAttrId(int attributeId) {
+
+		Session currentSession = entityManager.unwrap(Session.class);
+		
+		Query theQuery = 
+				currentSession.createQuery("select employeeId from EmployeeAttribute where "
+						+ "attribute_id=:attributeId");
+		theQuery.setParameter("attributeId", attributeId);
+		theQuery.list();
+
+		return theQuery.getResultList();
 	}
 
 

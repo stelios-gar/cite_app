@@ -32,8 +32,16 @@ private EmployeeAttributeService employeeAttributeService;
 	public List<Integer> getAttributes(@PathVariable int employeeId){
 		List<Integer> attributes;
 		
-		attributes = employeeAttributeService.findById(employeeId);
+		attributes = employeeAttributeService.getAttrByEmpId(employeeId);
 		return attributes;
+	}
+	
+	@CrossOrigin(origins="http://localhost:4200")
+	@GetMapping("/employees-attribute/attr/{attributeId}")
+	public List<Integer> getEmployees(@PathVariable int attributeId){
+		List<Integer> employees;
+		employees = employeeAttributeService.getEmpByAttrId(attributeId);
+		return employees;
 	}
 	
 //	@CrossOrigin(origins="http://localhost:4200")

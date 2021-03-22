@@ -21,9 +21,9 @@ public class EmployeeAttributeServiceImp implements EmployeeAttributeService {
 
 	@Override
 	@Transactional
-	public List<Integer> findById(int employeeId) {
+	public List<Integer> getAttrByEmpId(int employeeId) {
 		
-		return employeeAttributeDAO.findById(employeeId);
+		return employeeAttributeDAO.getAttrByEmpId(employeeId);
 	}
 
 	@Override
@@ -39,6 +39,12 @@ public class EmployeeAttributeServiceImp implements EmployeeAttributeService {
 	public void deleteById(int employeeId) {
 		
 		employeeAttributeDAO.deleteById(employeeId);
+	}
+
+	@Override
+	public List<Integer> getEmpByAttrId(int attributeId) {
+		
+		return employeeAttributeDAO.getEmpByAttrId(attributeId);
 	}
 
 }
